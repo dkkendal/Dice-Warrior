@@ -1,10 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+#define MAX_SOURCE_SIZE (0x400)
+
+char * searchReplace(char * string, char *toReplace[], char *replacements[], int numReplacements){
+    int i = 0;
+    char *locOfToRep;
+    char *toRep;
+    char *rep;
+    int lenToRep,lenStr,lenAfterLocRep;
+    static char buffer[MAX_SOURCE_SIZE];
+    for(i = 0; i < numReplacements; ++i){
+        toRep = toReplace[i];
+        rep = replacements[i];
+        //if str not in the string, exit.
+        if (!(locOfToRep = strstr(string,toRep))){exit(EXIT_FAILURE);}
+        lenToRep = strlen(toRep);
+        lenStr = strlen(string);
+        lenAfterLocRep = strlen(locOfToRep);
+        sprintf(buffer, "%.*s%s%s", lenStr-lenAfterLocRep, string,rep,locOfToRep+lenToRep);
+        string = buffer;
+    }
+    return buffer;
+}
 
 struct EffectData {
-    const char name[12];
-    const int ratio; // Divide value by ratio to get the end result. So an effect of value 10 with ratio 3 would have a final result of 3.
-    const char description[128]; // 128 should be enough space, but we'll see
+    char name[12];
+    int ratio; // Divide value by ratio to get the end result. So an effect of value 10 with ratio 3 would have a final result of 3.
+    char description[128]; // 128 should be enough space, but we'll see
 };
 
 // Whether added dice are treated as additional characters or not, they will be themed around some sort of archetype
@@ -33,6 +57,7 @@ const char upgrades[][16] = {
     "replace effect", // replaces the current effect with a different one, keeping the face value
     "merge", // gives one die face the effects of another, then turns the other into a dud
     "duplicate face", // replaces one die face with another
+    "add secondary", // allows an effect with a secondary effect to have another. For example, this could change a purge [burn] into a purge [burn, poison]. Applying this to channel allows it to remove either type of debuff totalling up to the channel value.
 };
 
 // TODO: use pointers to allow the effects list to have dynamic length
@@ -57,14 +82,50 @@ struct Entity {
 
 int main(int argc, char **argv) {
     FILE* reader = fopen("effects.csv","r");
+    struct EffectData effects[25];
 
-    if(!reader){
-        printf("Oh no");
+    if(reader == NULL){
+        printf("Error opening effects file");
         return 1;
     }
     else {
-        // stuff
-    }    
+        char buffer[256];
+        int row=0, column=0;
+
+        while(fgets(buffer, 256, reader)){
+            column=0;
+
+            char* value = strtok(buffer, ", ");
+
+            while(value){
+                switch (column)
+                {
+                case 0:
+                    strcpy(effects[row].name, value);
+                    break;
+                case 1:
+                    effects[row].ratio = value;
+                    break;
+                case 2:
+                    if(effects[row].ratio == 1){
+                        strcpy(effects[row].description, value);
+                    }
+                    else{
+                        char* temp;
+                        sprintf(temp, "1/%d", effects[row].ratio);
+                        strcpy(effects[row].description, searchReplace(value, "[ratio]", temp, 1));
+                    }
+                    break;
+                }
+                column++;
+            }
+
+            row++;
+        }
+        fclose(reader);
+    }
+
+    printf(effects);
 
     return 0;
 };
