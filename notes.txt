@@ -1,0 +1,18 @@
+Enemy ideas:
+    Sickened: begin with poison and a die face that removes poison at the cost of health.
+    Frozen: begin with large amounts of frozen.
+    Slumbering: begin with weaken.
+    Injured: begin with wound.
+
+    Could probably have a modifier for just about any of the buffs/debuffs in the game.
+    
+    Also having enemies that are particularly vulnerable to certain builds could be interesting as long as they don't become meta-defining. The idea is that running into one of them would be a nice surprise, while running into one without the right build would be just another fight.
+
+    Enemies can also showcase certain intended builds, such as an enemy that stacks strength/wound with multi-hit attacks, one that builds up burn, then purges it for added effect.
+
+Interesting interaction ideas:
+    Regen on enemy -> channel regen -> apply debuff. If the regen can only be applied to an enemy, the value would start higher, allowing the channel to become stronger much more quickly.
+
+
+Design musings:
+    Die values and effects could be decoupled for interesting effect, though I don't think I'm going for that here.

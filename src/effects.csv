@@ -1,0 +1,26 @@
+name, ratio, description
+attack, 1
+defend, 1
+hide, 1
+heal, 1
+dud, 1
+purge, 1
+cleanse, 2
+channel, 2
+strengthen, 3
+fortify, 3
+evade, 3
+vigor, 3
+regen, 3
+spiked, 3
+haste, 3
+luck, 2
+weaken, 3
+vulnerable, 3
+mark, 3
+wither, 3
+burn, 3
+freeze, 3
+poison, 3
+wound, 4
+curse, 5
