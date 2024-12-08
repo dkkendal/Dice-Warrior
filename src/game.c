@@ -91,6 +91,7 @@ int main(int argc, char **argv) {
     else {
         char buffer[256];
         int row=0, column=0;
+        char* endPointer;
 
         while(fgets(buffer, 256, reader)){
             column=0;
@@ -104,7 +105,7 @@ int main(int argc, char **argv) {
                     strcpy(effects[row].name, value);
                     break;
                 case 1:
-                    effects[row].ratio = value;
+                    effects[row].ratio = strtol(value, &endPointer, 10);
                     break;
                 case 2:
                     if(effects[row].ratio == 1){
