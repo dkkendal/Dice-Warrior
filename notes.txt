@@ -10,14 +10,24 @@ Enemy ideas:
 
     Enemies can also showcase certain intended builds, such as an enemy that stacks strength/wound with multi-hit attacks, one that builds up burn, then purges it for added effect.
 
+    Boss ideas:
+        RNGeesus -- random value, random effect, random target, gains a random buff each turn
+        Dragon -- burninating the countryside
+
 Interesting interaction ideas:
     Regen on enemy -> channel regen -> apply debuff. If the regen can only be applied to an enemy, the value would start higher, allowing the channel to become stronger much more quickly.
 
 Design musings:
     Die values and effects could be decoupled for interesting effect, though I don't think I'm going for that here.
+    How are new characters unlocked? Meta currency? Recruitment event locations? Quest to build their dice? Super upgrade? Perhaps you can sacrifice a die/character during a run, then unlock that die for future runs if you complete the run?
+
+New character unlocks:
+    Defult characters are unlocked on successful runs.
+    Custom characters are unlocked by removing them from the party before fighting the final boss.
 
 Balance thoughts:
     If Evasion is too weak, could let it reduce the rate of Hidden loss. Something like 1/(n+Evasion) stacks being lost instead of always 1/n
+    How much damage should crits do? Double? Base + Hide stacks? Double + removed Hide stacks? Base * (2 + 0.1*removed Hide stacks)? Should Strength be applied at the end to encourage crit builds to be their own thing?
     
 End of round effect order:
     Doomed

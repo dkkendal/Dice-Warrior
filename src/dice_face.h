@@ -1,5 +1,5 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#ifndef DICE_FACE_H
+#define DICE_FACE_H
 
 #endif
 
@@ -7,4 +7,4 @@
 typedef struct DieFace {
     // effect, value, secondary, repeat
     int effects [1][4];
-};
+} DieFace;

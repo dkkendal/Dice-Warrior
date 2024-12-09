@@ -1,3 +1,4 @@
-Dungeon Reels
-Roll (Rollscape)
-Slice & Dice
+Dungeon Reels -- roguelite reel-builder that I wanted to improve (according to me of course)
+Roll (Rollscape) -- dice upgrades and combos
+Slice & Dice -- dice based rpg combat
+Across the Obelisk -- buff-focused combat

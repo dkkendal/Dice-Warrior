@@ -7,7 +7,8 @@ typedef struct EffectData {
     char description[128]; // 128 should be enough space, but we'll see
 };
 
-EffectData effect_list[26] = {
+// TODO: should the same effect be separated based on affecting allies vs enemies?
+struct EffectData effect_list[] = {
     "attack", 1, "Deals damage. Simple but effective.",
     "defend", 1, "Blocks damage. Wears off at the start of your turn.",
     "hide", 1, "Gain Hidden which gives 5% dodge chance and 1% crit chance per stack. Lose 1/5 of stacks (rounded up) when either happens.",
@@ -33,7 +34,7 @@ EffectData effect_list[26] = {
     "poison", 3, "Apply [ratio] of value in Poison. Characters with health <= poison immediately die.",
     "wound", 4, "Apply [ratio] of value in Wounded. Wounded characters lose extra health from attacks equal to their stacks. Try multi-hits.",
     "curse", 5, "Apply [ratio] of value in Cursed. Cursed characters gain that many more stacks of non-Curse debuffs.",
-    "doom", 6, "Apply [ratio] of value in Doomed. Doomed characters have their health set to 1/(1+Doomed stacks) at end of round."
+    "doom", 6, "Apply [ratio] of value in Doomed. Doomed characters have their current health set to 1/(1+Doomed stacks) at end of round.",
 };
 
 #endif
