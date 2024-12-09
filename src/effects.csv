@@ -23,3 +23,4 @@ freeze, 3, Apply [ratio] of value in Freezing. Actions with value <= Freezing ar
 poison, 3, Apply [ratio] of value in Poison. Characters with health <= poison immediately die.
 wound, 4, Apply [ratio] of value in Wounded. Wounded characters lose extra health from attacks equal to their stacks. Try multi-hits.
 curse, 5, Apply [ratio] of value in Cursed. Cursed characters gain that many more stacks of non-Curse debuffs.
+doom, 6, Apply [ratio] of value in Doomed. Doomed characters have their health set to 1/(1+Doomed stacks) at end of round.

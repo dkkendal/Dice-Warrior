@@ -19,3 +19,9 @@ Design musings:
 Balance thoughts:
     If Evasion is too weak, could let it reduce the rate of Hidden loss. Something like 1/(n+Evasion) stacks being lost instead of always 1/n
     
+End of round effect order:
+    Doomed
+    Burning & Regen
+    Reset Haste/Luck costs
+    Remove block
+    Decrement buffs/debuffs
