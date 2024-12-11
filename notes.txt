@@ -35,3 +35,9 @@ End of round effect order:
     Reset Haste/Luck costs
     Remove block
     Decrement buffs/debuffs
+
+Difficulty setting: 
+    Easy - d4s
+    Normal - d6s
+    Hard - d8s
+    Why - d20s
