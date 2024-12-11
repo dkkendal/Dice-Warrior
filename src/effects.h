@@ -35,6 +35,7 @@ struct EffectData effect_list[] = {
     "wound", 4, "Apply [ratio] of value in Wounded. Wounded characters lose extra health from attacks equal to their stacks. Try multi-hits.",
     "curse", 5, "Apply [ratio] of value in Cursed. Cursed characters gain that many more stacks of non-Curse debuffs.",
     "doom", 6, "Apply [ratio] of value in Doomed. Doomed characters have their current health set to 1/(1+Doomed stacks) at end of round.",
+    "copy", 6, "Repeat another die face [ratio] of value times.",
 };
 
 #endif
