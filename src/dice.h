@@ -3,6 +3,7 @@
 #ifndef DICE_H
 #define DICE_H
 
+// TODO: make faces a dynamically sized array to allow for difficulty settings
 typedef struct Die {
     DieFace faces[6];
 } Die;

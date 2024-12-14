@@ -4,6 +4,7 @@
 #include "utility.h"
 #include "characters.h"
 #include "effects.h"
+#include "upgrades.h"
 
 int main(int argc, char **argv) {
     for(int i=0; i<ARRAY_LENGTH(effect_list); i++){
