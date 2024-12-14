@@ -16,6 +16,8 @@ enum DieTypes {
     WARLOCK, // 2 regen enemy, 2 channel regen, 1 poison enemy, 1 regen self. Give the enemy regen, convert it into regen for yourself or poison on the enemy.
     };
 
-Die get_character(int);
+Die get_character(int character_id){
+    // do stuff
+};
 
 #endif

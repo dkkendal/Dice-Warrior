@@ -9,8 +9,10 @@ typedef struct Entity
 {
     int is_player; // 0: enemy, 1: player
     int health;
-    int buffs[5], debuffs[4], statuses[4];
+    int buffs[9], debuffs[10];
     Die dice[3];
 } Entity;
+
+// TODO: functions for hp gain, loss, buff/debuff application/activation
 
 #endif
