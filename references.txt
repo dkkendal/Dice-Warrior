@@ -1,1 +1,2 @@
 searchReplace function borrowed from Tritlo's answer at https://stackoverflow.com/questions/4408170/for-string-find-and-replace
+(Might need to rewrite it from scratch anyway)

@@ -1,9 +1,11 @@
 #ifndef UPGRADES_H
 
-// Effects are applied in the order applied to the die face,
-// so a vigor face upgraded with healing could benefit from the increased healing immediately,
-// while a healing face upgraded with vigor, would perform the heal before gaining the bonus
-// TODO: consider removing flat bonus due to the addition of ratios
+/* 
+ Effects are applied in the order applied to the die face,
+ so a vigor face upgraded with healing could benefit from the increased healing immediately,
+ while a healing face upgraded with vigor, would perform the heal before gaining the bonus
+ */
+// TODO: remove comments once implemented in code
 enum upgrades {
     PLUS, // adds a fixed value to an effect, costs more depending on the effect
     REPEAT, // halves an effect's value (minimum 1) but causes it to apply an extra time
@@ -14,6 +16,8 @@ enum upgrades {
     MERGE, // gives one die face the effects of another, then turns the other into a dud
     DUPLICATE, // replaces one die face with another
     SECONDARY, // allows an effect with a secondary effect to have another. For example, this could change a purge [burn] into a purge [burn, poison]. Applying this to channel allows it to remove either type of debuff totalling up to the channel value.
+    INTERNAL, // doubles the face's value but can only target self/allies, only allowed on "harmful" faces. Sides with both beneficial and harmful effects are allowed. Might be allowed once per "harmful" effect on the face.
+    EXTERNAL, // doubles the face's value but can only target enemies, only allowed on "beneficial" faces. Sides with both beneficial and harmful effects are allowed. Might be allowed once per "beneficial" effect on the face.
 };
 
 #endif

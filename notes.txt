@@ -31,13 +31,16 @@ Balance thoughts:
     
 End of round effect order:
     Doomed
-    Burning & Regen
+    Burning & Regen (Total effect applied once, so burning 10 + regen 7 would simply lose 3 health)
     Reset Haste/Luck costs
-    Remove block
+    Remove block (TODO: does fortify preserve some leftover block?)
     Decrement buffs/debuffs
 
 Difficulty setting: 
     Easy - d4s
     Normal - d6s
     Hard - d8s
+    Showoff - d10s
+    Excessive - d12s
     Why - d20s
+    Doesn't necessarily need to have all of these settings, and this is a bit of a far-future sort of thing anyway.

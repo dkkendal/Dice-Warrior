@@ -11,7 +11,7 @@ typedef struct EffectData {
 struct EffectData effect_list[] = {
     "attack", 1, "Deals damage. Simple but effective.",
     "defend", 1, "Blocks damage. Wears off at the start of your turn.",
-    "hide", 1, "Gain Hidden which gives 5% dodge chance and 1% crit chance per stack. Lose 1/5 of stacks (rounded up) when either happens.",
+    "hide", 1, "Gain Hidden which gives 5% dodge chance and 1% crit chance per stack. Lose 1/5 of stacks (rounded up) when either happens.", // TODO: make sure that Hidden is not affected by buff modifiers except Evasion
     "heal", 1, "Restores a target's health. Probably don't want to use this on your enemies.",
     "dud", 1, "Does nothing. Bummer.",
     "purge", 1, "Clears all of a specific buff/debuff from a target.",
