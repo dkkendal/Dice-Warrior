@@ -8,7 +8,16 @@ typedef struct Die {
 } Die;
 
 // TODO: switch to pass by reference to directly modify the die
-int set_face(Die, int, DieFace);
-int upgrade_face(Die, int, int);
+int set_face(Die target, int face, DieFace new_face){
+    // do stuff
+}
+
+int upgrade_face(Die target, int face, int upgrade){
+    // do stuff
+}
+
+int upgrade_cost(Die target, int face, int upgrade){
+    // cost will increase with face value and maybe pre-existing upgrades
+}
 
 #endif

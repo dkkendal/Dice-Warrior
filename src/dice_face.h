@@ -5,6 +5,7 @@
 
 // TODO: use pointers to allow the effects list to have dynamic length
 typedef struct DieFace {
-    // effect, value, secondary, repeat
-    int effects [1][4];
+    int value;
+    // effect, secondary, repeat
+    int effects [1][3];
 } DieFace;
