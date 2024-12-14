@@ -1,7 +1,7 @@
-#include "dice.h"
-
 #ifndef CHARACTERS_H
 #define CHARACTERS_H
+#include "dice.h"
+#include "effects.h"
 
 #define BASE_HEALTH 50
 
@@ -29,6 +29,9 @@ typedef struct Character {
     char faces[128]; // contains comma/semicolon separated data for each die face. Semicolons separate faces, commas separate effects/upgrades for a given face. Effects are abbreviated with 2 letters (followed by face value for first effect). Upgrades are abbreviated with one letter letter followed by any secondary effect information.
 } Character;
 
+Character Easy_Characters[] = {
+    "Warrior", WARRIOR_DESC, "at4;at3;de4;de3",
+};
 
 Character Normal_Characters[] = {
     "warrior", WARRIOR_DESC, "at5;at4;at3;at2;de4;de3",
@@ -49,8 +52,42 @@ Character Normal_Characters[] = {
     "angel", ANGEL_DESC, "bl5,s;bl5;re3,s;re3;du1;du1",
 };
 
-Die get_character(int character_id){
-    // do stuff
+Character Hard_Characters[] = {
+    "warrior", WARRIOR_DESC, "at6;at5;at4;at3;at2;de5;de4;de3",
+};
+
+Character Showoff_Characters[] = {
+    "warrior", WARRIOR_DESC, "at6;at5;at4;at3;at2;de5;de4;de3;st3;fo3",
+};
+
+Character Excessive_Characters[] = {
+    "warrior", WARRIOR_DESC, "at6;at5;at5;at4;at3;at2;de5;de4;de4;de3;st3;fo3",
+};
+
+Die get_character(int character_id, int difficulty){
+    switch (difficulty)
+    {
+    case 0:
+        return generate_easy_die(Easy_Characters[character_id].faces);
+        break;
+    case 1:
+        return generate_normal_die(Normal_Characters[character_id].faces);
+        break;
+    case 2:
+        return generate_hard_die(Easy_Characters[character_id].faces);
+        break;
+    case 3:
+        return generate_showoff_die(Easy_Characters[character_id].faces);
+        break;
+    case 4:
+        return generate_excessive_die(Easy_Characters[character_id].faces);
+        break;
+    case 5:
+        return generate_why_die(Easy_Characters[character_id].faces);
+        break;
+    default:
+        break;
+    }
 };
 
 #endif

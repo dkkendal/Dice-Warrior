@@ -1,5 +1,6 @@
 #ifndef EFFECTS_H
 #define EFFECTS_H
+#include "utility.h"
 
 typedef struct EffectData {
     char name[12];
@@ -40,5 +41,13 @@ EffectData effect_list[] = {
     "curse", 5, "Apply [value/ratio] in Cursed. Cursed characters gain that many more stacks of other debuffs.",
     "doom", 6, "Apply [value/ratio] in Doomed. Doomed characters have their current health set to 1/(1+Doomed stacks) at end of round.",
 };
+
+int effect_from_code(char* code){
+    for(int i=0; i<ARRAY_LENGTH(effect_list); i++){
+        if(code == strcat(effect_list[i].name[0], effect_list[i].name[1]))
+            return i;
+    }
+    return -1;
+}
 
 #endif
